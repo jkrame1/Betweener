@@ -1,0 +1,49 @@
+#######################################
+# Syntax Coloring Map For Betweener
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Betweener	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+readTriggers	KEYWORD2
+readCVs	KEYWORD2
+readKnobs	KEYWORD2
+readUsbMIDI	KEYWORD2
+readDINMIDI		KEYWORD2
+readAllInputs	KEYWORD2
+readCV		KEYWORD2
+readKnob		KEYWORD2
+readCVRaw	KEYWORD2
+readKnobRaw		KEYWORD2
+readCVInputMIDI			KEYWORD2
+readKnobMIDI			KEYWORD2
+readKnobCV			KEYWORD2
+knobChanged			KEYWORD2
+CVChanged			KEYWORD2
+writeCVOut		KEYWORD2
+setBounceMillisec		KEYWORD2
+setRASnapMultiplier				KEYWORD2
+setRAActivityThreshold			KEYWORD2
+setRASleep			KEYWORD2
+MCP4922_write		KEYWORD2
+CVtoMIDI		KEYWORD2
+MIDItoCV			KEYWORD2
+knobToMIDI				KEYWORD2
+knobToCV				KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
