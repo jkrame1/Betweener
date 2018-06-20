@@ -1,5 +1,5 @@
-/*This code reads the Betweener Trigger inputs and sends
-  corresponding USB MIDI Note On/Off messages
+/*This code reads the Betweener CV inputs and sends
+  corresponding USB CC messages only when the volatage changes
 */
 
 
@@ -57,7 +57,7 @@ void loop() {
   }
 
 
-  delay(50);
+  delay(5);
 
   // MIDI Controllers should discard incoming MIDI messages.
   // http://forum.pjrc.com/threads/24179-Teensy-3-Ableton-Analog-CC-causes-midi-crash

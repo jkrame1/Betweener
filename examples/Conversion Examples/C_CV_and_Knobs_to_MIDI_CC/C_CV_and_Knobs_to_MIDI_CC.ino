@@ -1,3 +1,16 @@
+////////////////////////////////////////
+//This code reads the Betweener's knobs and CV inputs and
+//outputs corresponiding MIDI CC messages over USB.
+//These Messages can be mapped in audio software such as
+//Logic, Reaper, Ableton Live, Max/MSP, etc.
+//
+//Note, this code will only compile if your Arduino IDE
+//is set so that "Tools->USB Type->[  ]" is set
+//to one of the options that includes "MIDI".
+//
+//Joseph Kramer_June, 2018
+/////////////////////////////////////////
+
 #include <Betweener.h>
 
 Betweener b;
@@ -5,7 +18,7 @@ Betweener b;
 // the MIDI channel number to send messages
 const int channel = 1;
 
-//create variables for MIDI CC channels
+//create variables to assign MIDI CC channels
 int CC1 = 20;
 int CC2 = 21;
 int CC3 = 22;
@@ -56,7 +69,9 @@ b.readAllInputs();
   }
   delay(1);
 
-  // MIDI Controllers should discard incoming MIDI messages.
+  // If a MIDI Controller is not designed to respond to incoming MIDI, it
+  // should discard incoming MIDI messages. Othwerwise, the controller will
+  // work for a moment and then suddenly stop.
   // http://forum.pjrc.com/threads/24179-Teensy-3-Ableton-Analog-CC-causes-midi-crash
   while (usbMIDI.read()) {
     // ignore incoming messages

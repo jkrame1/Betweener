@@ -1,17 +1,17 @@
 ///////////////////////////////////////////////////////////
-//USB_MIDI_Note_to_CV
+//USB_MIDI_Note_to_Mono_Voice_CV
 //
 //This code receives MIDI over USB from a computer and generates Control Voltages
 //on the four Betweener outputs.
-//  1 Note to CV - this is roughly 1v/oct
-//  2 Gate - High for Note On Messages and Low for Note Off messages (or velocity of 0)
+//  1 Note to CV - this is uncalibrated 1v/oct
+//  2 Gate - High for Note On Messages and Low when most recent Note is released
 //  3 Velocity CV - very wide range, can be remapped in NOTE ON function below
 //  4 Aftertouch CV - mapped for full voltage output range
 //
 //includes portions of PJRC Teensy MIDI examples
 //Uses the Betweener Library by Kathryn Schaffer
 //
-//Example Code by Joseph Kramer - 5 Feb 2018
+//Example Code by Joseph Kramer - 20 June, 2018
 ///////////////////////////////////////////////////////////
 
 #include <Betweener.h>
