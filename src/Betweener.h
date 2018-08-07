@@ -222,6 +222,19 @@ class Betweener
     bool knobChanged(int knob);
     bool CVChanged(int cv_channel);
     
+    //functions that provide a convenient wrapping for Bounce2 functions.
+    //note that because of the hardware implementation, a high trigger input
+    //ends up being a low when it hits the chip, thus a rising trigger
+    //is actually read in as a falling trigger.  These functions do the right thing
+    //so you don't have to keep track of it.
+    //NOTE:  you must call readTriggers before these functions!
+    bool triggerRose(int trigger);
+    bool triggerFell(int trigger);
+    bool triggerHigh(int trigger);
+    bool triggerLow(int trigger);
+
+    
+    
     /////////////////////////
     //BASIC OUTPUT FUNCTIONS
     //These functions assume you are using your sketch to decide directly what

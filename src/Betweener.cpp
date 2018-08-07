@@ -495,6 +495,128 @@ int Betweener::knobToCV(int val){
 
 
 
+bool Betweener::triggerRose(int trigger){
+    //note:  because of hardware setup, a rising trigger input is read as a
+    //falling value at the Teensy pin, and vice versa
+    //also note!  you must call readTriggers() first
+    bool rose = false;
+    switch(trigger){
+        case 1:
+            rose = trig1.fell();
+            break;
+        case 2:
+            rose = trig2.fell();
+            break;
+        case 3:
+            rose = trig3.fell();
+            break;
+        case 4:
+            rose = trig4.fell();
+            break;
+        default:
+            DEBUG_PRINTLN("you are trying to read an nonexistent trigger!");
+            break;
+            
+    }
+    return rose;
+}
+
+
+bool Betweener::triggerFell(int trigger){
+    //note:  because of hardware setup, a rising trigger input is read as a
+    //falling value at the Teensy pin, and vice versa
+    //also note!  you must call readTriggers() first
+    bool fell = false;
+    switch(trigger){
+        case 1:
+            fell = trig1.rose();
+            break;
+        case 2:
+            fell = trig2.rose();
+            break;
+        case 3:
+            fell = trig3.rose();
+            break;
+        case 4:
+            fell = trig4.rose();
+            break;
+        default:
+            DEBUG_PRINTLN("you are trying to read an nonexistent trigger!");
+            break;
+            
+    }
+    return fell;
+}
+
+
+bool Betweener::triggerHigh(int trigger){
+    //note:  because of hardware setup, a high input trigger
+    //is read as a low at the Teensy pin and vice versa
+    //also note!  you must call readTriggers() first
+    int value = 0;
+
+    switch(trigger){
+        case 1:
+            value = trig1.read();
+            break;
+        case 2:
+            value = trig2.read();
+            break;
+        case 3:
+            value = trig3.read();
+            break;
+        case 4:
+            value = trig4.read();
+            break;
+        default:
+            DEBUG_PRINTLN("you are trying to read an nonexistent trigger!");
+            break;
+            
+    }
+    //here's where the logic is reversed due to the high/low switch
+    if (value == HIGH){
+        return false;
+    }else{
+        return true;
+    }
+
+}
+
+
+bool Betweener::triggerLow(int trigger){
+    //note:  because of hardware setup, a high input trigger
+    //is read as a low at the Teensy pin and vice versa
+    //also note!  you must call readTriggers() first
+    int value = 0;
+    
+    switch(trigger){
+        case 1:
+            value = trig1.read();
+            break;
+        case 2:
+            value = trig2.read();
+            break;
+        case 3:
+            value = trig3.read();
+            break;
+        case 4:
+            value = trig4.read();
+            break;
+        default:
+            DEBUG_PRINTLN("you are trying to read an nonexistent trigger!");
+            break;
+            
+    }
+    //here's where the logic is reversed due to the high/low switch
+    if (value == LOW){
+        return false;
+    }else{
+        return true;
+    }
+    
+}
+
+
 void Betweener::MCP4922_write(int cs_pin, byte dac, int value){
     // Adapted from code by Sebastian Tomczak
     // from a tutorial here:  http://little-scale.blogspot.com/2016/11/teensy-and-mcp4922-dual-channel-12-bit.html
