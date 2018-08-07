@@ -155,42 +155,24 @@ void printKnobValues(){
 
 void printTriggers(){
   while(!Serial.available()){
-    //the function below reads just the triggers.  we could also do readAllInputs().
-    b.readTriggers();
-    //the triggers are Bounce objects and they have all the functions
-    //defined in that library, e.g. to test for a rising edge or 
-    //falling edge.  NOTE:  because of the hardware setup involving 
-    //pullup resistors on the trigger pins, the bounce objects will 
-    //detect a falling edge when an input trigger has a rising edge,
-    //and vice versa.  Thus, the code below does the right thing and 
-    //reports the right thing despite looking backwards.
-    if (b.trig1.risingEdge()){
-      Serial.println("Falling edge on trigger 1");
+
+  b.readTriggers();   
+
+  for (int i = 1; i<5; i++){
+
+    if (b.triggerRose(i)){
+      Serial.println(String("Trigger ")+i+String(" rose"));
+      
     }
-    if (b.trig1.fallingEdge()){
-      Serial.println("Rising edge on trigger 1");
+    if (b.triggerFell(i)){
+      Serial.println(String("Trigger ")+i+String(" fell"));
+
+   
     }
-    if (b.trig2.risingEdge()){
-      Serial.println("Falling edge on trigger 2");
-    }
-    if (b.trig2.fallingEdge()){
-      Serial.println("Rising edge on trigger 2");
-    }
-    if (b.trig3.risingEdge()){
-      Serial.println("Falling edge on trigger 3");
-    }
-    if (b.trig3.fallingEdge()){
-      Serial.println("Rising edge on trigger 3");
-    }
-    if (b.trig4.risingEdge()){
-      Serial.println("Falling edge on trigger 4");
-    }
-    if (b.trig4.fallingEdge()){
-      Serial.println("Rising edge on trigger 4");
-    }
-    delay(75);    
+
   }
 
+}
 }
 
 void printCVInputs(){
