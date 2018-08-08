@@ -62,35 +62,35 @@ void trigOut(byte out) {  //Tells the Betweener how to write Trigger to the CV o
   switch (out) {
 
     case 1:
-      b.writeCVOut(4095, 1); //write the CV HIGH (approx 5v)
+      b.writeCVOut(1, 4095); //write the CV HIGH (approx 5v)
       digitalWrite(8, HIGH); //turn LED On when a Note On message is received
       delay(trigTime1); //write the CV LOW (0v)
       digitalWrite(8, LOW); //turn LED Off
-      b.writeCVOut(0, 1);
+      b.writeCVOut(1, 0);
       break;
 
     case 2:
-      b.writeCVOut(4095, 2);
+      b.writeCVOut(2, 4095);
       digitalWrite(8, HIGH); //turn LED On when a Note On message is received
       delay(trigTime2);
       digitalWrite(8, LOW); //turn LED Off
-      b.writeCVOut(0, 2);
+      b.writeCVOut(2, 0);
       break;
 
     case 3:
-      b.writeCVOut(4095, 3);
+      b.writeCVOut(3, 4095);
       digitalWrite(8, HIGH); //turn LED On when a Note On message is received
       delay(trigTime3);
       digitalWrite(8, LOW); //turn LED Off
-      b.writeCVOut(0, 3);
+      b.writeCVOut(3, 0);
       break;
 
     case 4:
-      b.writeCVOut(4095, 4);
+      b.writeCVOut(4, 4095);
       digitalWrite(8, HIGH); //turn LED On when a Note On message is received
       delay(trigTime4);
       digitalWrite(8, LOW); //turn LED Off
-      b.writeCVOut(0, 4);
+      b.writeCVOut(4, 0);
       break;
 
     default:
