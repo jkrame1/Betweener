@@ -29,31 +29,31 @@ void loop() {
   //this function reads just the triggers. We could also do readAllInputs().
   b.readTriggers();
 
-  // Check each button for gate HIGH "falling" edge/Note ON
-  if (b.trig1.fallingEdge()) {
+  // Check each trigger for rising voltage/Note ON
+  if (b.triggerRose(1)) {
     usbMIDI.sendNoteOn(60, 127, channel);  // 60 = C4
   }
-  if (b.trig2.fallingEdge()) {
+  if (b.triggerRose(2)) {
     usbMIDI.sendNoteOn(62, 127, channel);  // 62 = D4
   }
-  if (b.trig3.fallingEdge()) {
+  if (b.triggerRose(3)) {
     usbMIDI.sendNoteOn(64, 127, channel);  // 64 = E4
   }
-  if (b.trig4.fallingEdge()) {
+  if (b.triggerRose(4)) {
     usbMIDI.sendNoteOn(65, 127, channel);  // 65 = F4
   }
 
-  // Check each button for gate LOW "rising" edge/Note OFF
-  if (b.trig1.risingEdge()) {
+  // Check each trigger for a falling voltage/Note OFF
+  if (b.triggerFell(1)) {
     usbMIDI.sendNoteOff(60, 0, channel);  // 60 = C4
   }
-  if (b.trig2.risingEdge()) {
+  if (b.triggerFell(2)) {
     usbMIDI.sendNoteOff(62, 0, channel);  // 62 = D4
   }
-  if (b.trig3.risingEdge()) {
+  if (b.triggerFell(3)) {
     usbMIDI.sendNoteOff(64, 0, channel);  // 64 = E4
   }
-  if (b.trig4.risingEdge()) {
+  if (b.triggerFell(4)) {
     usbMIDI.sendNoteOff(65, 0, channel);  // 65 = F4
   }
 
