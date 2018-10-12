@@ -59,31 +59,31 @@ void loop() {
   b.readTriggers();
 
 //TRIGGERS to USB MIDI NOTES////////////////////////////////////
-  // Check each button for gate HIGH "falling" edge/Note ON
-  if (b.trig1.fallingEdge()) {
+  // Check each button for gate HIGH rising edge/Note ON
+  if (b.trig1.risingEdge()) {
     usbMIDI.sendNoteOn(60, 127, channel);  // 60 = C4
   }
-  if (b.trig2.fallingEdge()) {
+  if (b.trig2.risingEdge()) {
     usbMIDI.sendNoteOn(62, 127, channel);  // 62 = D4
   }
-  if (b.trig3.fallingEdge()) {
+  if (b.trig3.risingEdge()) {
     usbMIDI.sendNoteOn(64, 127, channel);  // 64 = E4
   }
-  if (b.trig4.fallingEdge()) {
+  if (b.trig4.risingEdge()) {
     usbMIDI.sendNoteOn(65, 127, channel);  // 65 = F4
   }
 
-  // Check each button for gate LOW "rising" edge/Note OFF
-  if (b.trig1.risingEdge()) {
+  // Check each button for gate LOW falling edge/Note OFF
+  if (b.trig1.fallingEdge()) {
     usbMIDI.sendNoteOff(60, 0, channel);  // 60 = C4
   }
-  if (b.trig2.risingEdge()) {
+  if (b.trig2.fallingEdge()) {
     usbMIDI.sendNoteOff(62, 0, channel);  // 62 = D4
   }
-  if (b.trig3.risingEdge()) {
+  if (b.trig3.fallingEdge()) {
     usbMIDI.sendNoteOff(64, 0, channel);  // 64 = E4
   }
-  if (b.trig4.risingEdge()) {
+  if (b.trig4.fallingEdge()) {
     usbMIDI.sendNoteOff(65, 0, channel);  // 65 = F4
   }
 //////////////////////////////////////////////////////////////
@@ -163,5 +163,3 @@ void OnAfterTouch(byte channel, byte pressure) {
   int pressureCV = map(pressure, 0, 127, 0, 4095);
   b.writeCVOut(4, pressureCV);
 }
-
-
