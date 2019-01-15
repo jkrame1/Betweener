@@ -1,6 +1,8 @@
 # Betweener
 Learn to build and program the Betweener in the wiki: https://github.com/jkrame1/Betweener/wiki
 
+![Betweener Panel](https://github.com/jkrame1/Betweener/blob/master/Hardware/Betweener%20Build%20Images/Betweener-75.jpg)
+
 Description
 
 The Betweener is an affordable, DIY module (Eurorack-compatible) for use in synthesis and multi-instrument systems.  It combines the flexibility of a Teensy 3.2 (programmable using the Arduino IDE) with four built-in Control Voltage (CV) inputs, four Trigger inputs, four knobs, and four CV outputs.  Via USB MIDI or an add-on DIN MIDI breakout, the Betweener enables MIDI-to-CV and CV-to-MIDI conversion in a highly customizable and hackable format.   
