@@ -31,8 +31,8 @@ void setup() {
 
 void loop() {
 
-  //Read and scale the CV Inputs. We could also do readAllInputs() or
-  //b.readCVInputs(); and then scale manually
+  //Read and scale the CV Inputs. We could also do 
+  //readAllInputs(); and then scale the member data manually
  CurrentCV1 = b.readCVInputMIDI(1);
  CurrentCV2 = b.readCVInputMIDI(2);
  CurrentCV3 = b.readCVInputMIDI(3);
