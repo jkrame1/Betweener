@@ -28,6 +28,10 @@ readKnobMIDI			KEYWORD2
 readKnobCV			KEYWORD2
 knobChanged			KEYWORD2
 CVChanged			KEYWORD2
+triggerRose			KEYWORD2
+triggerFell			KEYWORD2
+triggerHigh			KEYWORD2
+triggerLOW			KEYWORD2
 writeCVOut		KEYWORD2
 setBounceMillisec		KEYWORD2
 setRASnapMultiplier				KEYWORD2
