@@ -74,7 +74,7 @@ Betweener::Betweener(void){
 void Betweener::begin(void){
     //this does all the real setup stuff
     
-    //Note that al of the upper-case "variables" here are actually
+    //Note that all of the upper-case "variables" here are actually
     //defined in preprocessor directives in the .h file.
     //They cannot be modified at run time.
     

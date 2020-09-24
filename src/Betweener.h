@@ -120,7 +120,7 @@
 
 //use this flag to decide whether to make use of DIN midi or not
 //if you want it, keep the line in the code.  Otherwise, comment it out.
-//Note that if you  use MIDI DIN, you will need
+//Note that if you use MIDI DIN, you will need
 //the updated MIDI library for Teensy, from here:
 //https://github.com/FortySevenEffects/arduino_midi_library
 //and you will need to delete the default MIDI.h file that
@@ -186,7 +186,7 @@ class Betweener
     // these are the functions for making the Betweener read inputs.
     // you have two choices for how to handle inputs...
     // you can ask Betweener to read everything and just store the
-    // numbers, whicih you then retrieve and deal with yourself,
+    // numbers, which you then retrieve and deal with yourself,
     // or you can ask it to perform a read and give you back a number
     // for an individual channel.
 
