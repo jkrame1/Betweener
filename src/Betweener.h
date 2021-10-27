@@ -119,13 +119,14 @@
 
 
 //use this flag to decide whether to make use of DIN midi or not
-//if you want it, keep the line in the code.  Otherwise, comment it out.
+//If you want it, uncomment the line in the code that says #define DODINMIDI.
+//Otherwise, leave it commented it out.
 //Note that if you use MIDI DIN, you will need
 //the updated MIDI library for Teensy, from here:
 //https://github.com/FortySevenEffects/arduino_midi_library
 //and you will need to delete the default MIDI.h file that
 //is included in the Arduino package.
-#define DODINMIDI
+//#define DODINMIDI
 
 
 //If we do choose to use hardware MIDI, these will be
